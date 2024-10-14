@@ -35,6 +35,9 @@ if(age<25,annéespermis<2){
         } else if (tarif === 'D') {
             tarif = 'C';
         }
+        else {
+            tarif="refusé";
+        }
     }
     return tarif;
 }
