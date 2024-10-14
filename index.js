@@ -27,7 +27,7 @@ if(age<25,annéespermis<2){
     }
     }
 
-    if (annéesassu > 1) {
+    if (fidélité > 1) {
         if (tarif === 'B') {
             tarif = 'A';
         } else if (tarif === 'C') {
