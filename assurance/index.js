@@ -14,12 +14,12 @@ if ((age>25  && annéespermis<2) || (age<25 && annéespermis>2)) {
 else {
     tarif="refusé";}
 
-if (age<25,annéespermis<2){
+if (age>25,annéespermis>2){
     if (nbAccident===0){
     tarif= "B";}
     if (nbAccident===1){
     tarif= "C";}
-    if (nbAccident<2){
+    if (nbAccident===2){
     tarif= "D";}
     else {
         tarif="refusé";
@@ -40,4 +40,4 @@ if (age<25,annéespermis<2){
     }
     return tarif;
 }
-console.log(differentstarifs(28,5,0,0))
+console.log(differentstarifs(28, 2, 0, 2))
