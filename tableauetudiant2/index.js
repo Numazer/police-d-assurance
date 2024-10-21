@@ -100,3 +100,28 @@ const tableau = [
     { nom: "Ulysse", note: 92 },
     { nom: "valérie", note: 89 }
 ];
+
+// Fonction pour enlever les accents et mettre en minuscule
+function nettoyerNom(nom) {
+    return nom.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+}
+
+// Étape : Trier les étudiants par ordre alphabétique
+const etudiantsTries = [];
+while (tableau.length > 0) {
+    let minIndex = 0;
+    for (let j = 1; j < tableau.length; j++) {
+        if (nettoyerNom(tableau[j].nom) < nettoyerNom(tableau[minIndex].nom)) {
+            minIndex = j;
+        }
+    }
+    etudiantsTries.push(tableau[minIndex]);
+    tableau.splice(minIndex, 1);
+}
+
+
+// Afficher les étudiants triés
+console.log("Étudiants triés par nom :");
+for (let i = 0; i < etudiantsTries.length; i++) {
+    console.log(`${etudiantsTries[i].nom}: ${etudiantsTries[i].note}`);
+}
